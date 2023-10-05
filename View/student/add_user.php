@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thêm sinh viên</title>
 </head>
+
 <body>
     <div class="content">
         <div class="dangkysinhvien">
@@ -25,12 +27,26 @@
                         <td><input type="text" name="lop" placeholder="Lớp"></td>
                     </tr>
                     <tr>
-                        <td>ID lớp học: </td>
-                        <td><input type="text" name="ClassID" placeholder="ID lớp học"></td>
+                        <div class="form-group">
+                            <label for="ClassID">ClassTitle</label>
+                            <select class="form-control" id="ClassID" name="ClassID" required>
+                                <option value="">Please select ClassTitle</option>
+                                <?php foreach ($classes as $class) : ?>
+                                    <option value="<?php echo $class['ClassTitle']; ?>"><?php echo $class['ClassTitle']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                     </tr>
                     <tr>
-                        <td>ID môn học: </td>
-                        <td><input type="text" name="CourseID" placeholder="ID môn học"></td>
+                        <div class="form-group">
+                            <label for="CourseID">CourseTitle</label>
+                            <select class="form-control" id="CourseID" name="CourseID" required>
+                                <option value="">Please select CourseTitle</option>
+                                <?php foreach ($courses as $course) : ?>
+                                    <option value="<?php echo $course['CourseTitle']; ?>"><?php echo $course['CourseTitle']; ?></option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
                     </tr>
                     <tr>
                         <td>&nbsp;</td>
@@ -38,14 +54,15 @@
                     </tr>
                 </table>
             </form>
-
-            <?php
-                if (isset($thanhcong) && in_array('add_success', $thanhcong)) {
-                    echo "<p style = 'color: green; text-align: center'>Thêm mới thành công</p>";
-                }
-            ?>
-
         </div>
     </div>
+
+    <?php
+    if (isset($thanhcong) && in_array('add_success', $thanhcong)) {
+        echo "<p style = 'color: green; text-align: center'>Thêm mới thành công</p>";
+    }
+    ?>
+
 </body>
+
 </html>

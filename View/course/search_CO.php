@@ -2,7 +2,7 @@
     <form action="" method="GET">
         <table>
             <tr>
-                <input type="hidden" name="controller" value="student">
+                <input type="hidden" name="controller" value="course">
                 <td><input type="text" name="tukhoa" placeholder="Nhập từ khoá"></td>
                 <td><input type="submit" value="Tìm kiếm"></td>
             </tr>
@@ -11,16 +11,12 @@
     </form>
 </div>
 <div class="danhsach">
-    <h3>Danh sách sinh viên - Quản lý sinh viên</h3>
+    <h3>Danh sách lớp học - Quản lý lớp học</h3>
     <table border="1px">
         <thead>
             <tr>
                 <th>STT</th>
-                <th>Mã sinh viên</th>
-                <th>Tên sinh viên</th>
-                <th>Lớp</th>
-                <th>ClassID</th>
-                <th>CourseID</th>
+                <th>Tên lớp học</th>
                 <th>Hành động</th>
             </tr>
         </thead>
@@ -32,12 +28,10 @@
             ?>
             <tr>
                 <td><?php echo $stt; ?></td>
-                <td><?php echo $value['masv']; ?></td>
-                <td><?php echo $value['hoten']; ?></td>
-                <td><?php echo $value['lop']; ?></td>
+                <td><?php echo $value['CourseTitle']; ?></td>
                 <td>
-                    <a onclick="return confirm('Bạn có chắc chắn muốn sửa không?')" href="index.php?controller=student&action=edit&id=<?php echo $value['id']; ?>">Edit</a>
-                    <a onclick="return confirm('Bạn có chắc chắn muốn xoá không?')" href="index.php?controller=student&action=delete&id=<?php echo $value['id']; ?>" title="Xoá">Delete</a>
+                    <a onclick="return confirm('Bạn có chắc chắn muốn sửa không?')" href="index.php?controller=course&action=edit&id=<?php echo $value['CourseID']; ?>">Edit</a>
+                    <a onclick="return confirm('Bạn có chắc chắn muốn xoá không?')" href="index.php?controller=course&action=delete&id=<?php echo $value['CourseID']; ?>" title="Xoá">Delete</a>
                 </td>
             </tr>
             <?php

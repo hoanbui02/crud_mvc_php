@@ -11,6 +11,13 @@
 
     switch ($action) {
         case 'add': {
+            $conn = new PDO('mysql:host=localhost;dbname=mvc_student2', 'root', '');
+            $query = "SELECT * FROM class ORDER BY ClassID ASC";
+            $classes = $conn->query($query);
+
+            $query1 = "SELECT * FROM course ORDER BY CourseID ASC";
+            $courses = $conn->query($query1);
+
             if (isset($_POST['add_user'])) {
                 $masv = $_POST['masv'];
                 $hoten = $_POST['hoten'];
@@ -25,7 +32,16 @@
             require_once ('View/student/add_user.php');
             break;
         }
+
         case 'edit': {
+
+            $conn = new PDO('mysql:host=localhost;dbname=mvc_student2', 'root', '');
+            $query = "SELECT * FROM class ORDER BY ClassID ASC";
+            $classes = $conn->query($query);
+
+            $query1 = "SELECT * FROM course ORDER BY CourseID ASC";
+            $courses = $conn->query($query1);
+
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
                 $tblTable = "student";
@@ -48,7 +64,8 @@
             }
             require_once ('View/student/edit_user.php');
             break;
-        }
+        } 
+
         case 'delete': {
             if (isset($_GET['id'])) {
                 $id = $_GET['id'];
@@ -60,10 +77,17 @@
             } else {
                 header('location: index.php?controller=student&action=list');
             }
-            //require_once ('View/student/delete_user.php');
             break;
         }
         case 'list': {
+
+            $conn = new PDO('mysql:host=localhost;dbname=mvc_student2', 'root', '');
+            $query = "SELECT * FROM class ORDER BY ClassID ASC";
+            $classes = $conn->query($query);
+
+            $query1 = "SELECT * FROM course ORDER BY CourseID ASC";
+            $courses = $conn->query($query1);
+
             $tblTable = "student";
             $db->getData($tblTable);
             $data = $db->getAllData($tblTable);
