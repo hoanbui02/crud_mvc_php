@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thêm sinh viên</title>
 </head>
-
+<?php
+?>
 <body>
     <div class="content">
         <div class="dangkysinhvien">
@@ -27,25 +28,25 @@
                         <td><input type="text" name="lop" placeholder="Lớp"></td>
                     </tr>
                     <tr>
-                        <div class="form-group">
-                            <label for="ClassID">ClassTitle</label>
-                            <select class="form-control" id="ClassID" name="ClassID" required>
-                                <option value="">Please select ClassTitle</option>
-                                <?php foreach ($classes as $class) : ?>
-                                    <option value="<?php echo $class['ClassTitle']; ?>"><?php echo $class['ClassTitle']; ?></option>
+                            <td>ClassTitle</td>
+                            <td ><select class="form-control" id="ClassID" name="ClassID" style="width: 175px;" required>
+                                <option value="">Select ClassID</option>
+                                <?php foreach ($tmp as $class) : ?>
+                                    <option value="<?php echo $class['ClassID']; ?>"><?php echo $class['ClassID']; ?></option>
                                 <?php endforeach; ?>
                             </select>
-                        </div>
+                            </td>
                     </tr>
                     <tr>
-                        <div class="form-group">
-                            <label for="CourseID">CourseTitle</label>
-                            <select class="form-control" id="CourseID" name="CourseID" required>
-                                <option value="">Please select CourseTitle</option>
+                      
+                            <td>CourseTitle</td>
+                            <td><select class="form-control" id="CourseID" name="CourseID" style="width: 175px;" required>
+                                <option value="">Select CourseID</option>
                                 <?php foreach ($courses as $course) : ?>
-                                    <option value="<?php echo $course['CourseTitle']; ?>"><?php echo $course['CourseTitle']; ?></option>
+                                    <option value="<?php echo $course['CourseID']; ?>"><?php echo $course['CourseID']; ?></option>
                                 <?php endforeach; ?>
                             </select>
+                            </td>
                         </div>
                     </tr>
                     <tr>

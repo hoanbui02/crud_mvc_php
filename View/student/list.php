@@ -38,8 +38,10 @@
                 <td><?php echo $value['ClassID']; ?></td>
                 <td><?php echo $value['CourseID']; ?></td>
                 <td>
-                    <a onclick="return confirm('Bạn có chắc chắn muốn sửa không?')" href="index.php?controller=student&action=edit&id=<?php echo $value['id']; ?>">Edit</a>
-                    <a onclick="return confirm('Bạn có chắc chắn muốn xoá không?')" href="index.php?controller=student&action=delete&id=<?php echo $value['id']; ?>" title="Xoá">Delete</a>
+                    <a onclick="return confirm('Bạn có chắc chắn muốn sửa không?')" href="index.php?controller=student&action=edit&id=<?php
+                     echo $value['id']; ?>">Edit</a>
+                    <a onclick="return confirm('Bạn có chắc chắn muốn xoá không?')" href="index.php?controller=student&action=delete&id=<?php
+                     echo $value['id']; ?>" title="Xoá">Delete</a>
                 </td>
             </tr>
             <?php

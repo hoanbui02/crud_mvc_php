@@ -14,6 +14,11 @@
             $conn = new PDO('mysql:host=localhost;dbname=mvc_student2', 'root', '');
             $query = "SELECT * FROM class ORDER BY ClassID ASC";
             $classes = $conn->query($query);
+            $tmp = [];
+            foreach ($classes as $key => $classe) {
+                $tmp[] = $classe;
+            }
+            
 
             $query1 = "SELECT * FROM course ORDER BY CourseID ASC";
             $courses = $conn->query($query1);
@@ -29,7 +34,7 @@
                     $thanhcong[] = 'add_success';
                 }
             }
-            require_once ('View/student/add_user.php');
+            require_once('View/student/add_user.php');
             break;
         }
 

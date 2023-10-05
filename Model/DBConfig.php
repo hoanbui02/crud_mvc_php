@@ -105,7 +105,9 @@
         public function InsertData($masv, $hoten, $lop, $ClassID, $CourseID)
         {
             $sql = "INSERT INTO student(id, masv, hoten, lop, ClassID, CourseID) VALUES (null, '$masv', '$hoten', '$lop', '$ClassID', '$CourseID')";
+            
             return $this->execute($sql);
+    
         } 
 
         
